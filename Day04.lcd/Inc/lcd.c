@@ -82,7 +82,7 @@ void LcdPuts(uint8_t line, char str[]) {
 }
 
 void LcdShift(uint8_t num){
-	for(uint8_t i=0; i<num; i++)
+	for(uint8_t i=0; i<=num; i++)
 	{
 		DelayMs(1000);
 		LcdWrite(LCD_CMD, LCD_SHIFT);

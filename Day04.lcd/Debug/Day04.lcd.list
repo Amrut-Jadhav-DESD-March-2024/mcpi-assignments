@@ -487,7 +487,7 @@ void LcdShift(uint8_t num){
  8000478:	af00      	add	r7, sp, #0
  800047a:	4603      	mov	r3, r0
  800047c:	71fb      	strb	r3, [r7, #7]
-	for(uint8_t i=0; i<num; i++)
+	for(uint8_t i=0; i<=num; i++)
  800047e:	2300      	movs	r3, #0
  8000480:	73fb      	strb	r3, [r7, #15]
  8000482:	e00a      	b.n	800049a <LcdShift+0x26>
@@ -499,14 +499,14 @@ void LcdShift(uint8_t num){
  800048c:	2118      	movs	r1, #24
  800048e:	2000      	movs	r0, #0
  8000490:	f7ff ff1c 	bl	80002cc <LcdWrite>
-	for(uint8_t i=0; i<num; i++)
+	for(uint8_t i=0; i<=num; i++)
  8000494:	7bfb      	ldrb	r3, [r7, #15]
  8000496:	3301      	adds	r3, #1
  8000498:	73fb      	strb	r3, [r7, #15]
  800049a:	7bfa      	ldrb	r2, [r7, #15]
  800049c:	79fb      	ldrb	r3, [r7, #7]
  800049e:	429a      	cmp	r2, r3
- 80004a0:	d3f0      	bcc.n	8000484 <LcdShift+0x10>
+ 80004a0:	d9f0      	bls.n	8000484 <LcdShift+0x10>
 	}
 }
  80004a2:	bf00      	nop
